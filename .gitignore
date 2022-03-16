@@ -1,0 +1,29 @@
+# Eclipse IDE
+/.classpath
+/.project
+/.settings
+
+# NetBeans IDE
+/nbproject
+
+# IntelliJ IDE
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Potential other build files (we use maven!)
+/build.xml
+/build
+/bin
+/dist
+/manifest.mf
+
+# Mac srap
+.DS_Store
+
+# Linux scrap
+.*.sw[a-p]
+
+# Maven
+/target/

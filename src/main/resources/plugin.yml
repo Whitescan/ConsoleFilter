@@ -1,0 +1,12 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+author: Whitescan
+api-version: 1.18
+load: STARTUP
+main: me.whitescan.consolefilter.spigot.SpigotConsoleFilter
+
+commands:
+    reloadconsolefilter:
+      description: Reload the console filter
+      permission: consolefilter.reload

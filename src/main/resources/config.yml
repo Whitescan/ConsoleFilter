@@ -1,0 +1,11 @@
+# Console Filter Configuration
+config:
+  # Used when the command sender lacks the permission to execute a command
+  no-permission-message: '&cYou lack the permission &7consolefilter.reload'
+  
+  # Used when the reload command was completed.
+  config-reloaded-message: '&cConsoleFilter &aConfig reloaded!'
+  
+  # All messages will be hidden that contain these messages
+  filter:
+  - 'moved wrongly!,'

@@ -9,3 +9,4 @@ config:
   # All messages will be hidden that contain these messages
   filter:
   - 'moved wrongly!,'
+  - 'moved too quickly!'

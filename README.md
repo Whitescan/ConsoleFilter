@@ -1,5 +1,5 @@
 # ConsoleFilter
-A lightweight plugin to filter and hide console messages
+A lightweight plugin to filter and hide console messages and remove old log files.
 
 # Java Version
 Java 17 is used within this plugin and is strongly recommended.

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -34,6 +35,8 @@ public class WaterfallConsoleFilter extends Plugin {
 	private TextComponent noPermissionMessage;
 	private TextComponent configReloadedMessage;
 
+	private int keepLogs;
+
 	private List<String> filter;
 
 	@Override
@@ -46,6 +49,9 @@ public class WaterfallConsoleFilter extends Plugin {
 		((Logger) LogManager.getRootLogger()).addFilter(new LogFilter(filter));
 
 		getLogger().info("Loaded successfully! Console will now be filtered.");
+
+		if (keepLogs > 0)
+			cleanupLogs();
 
 	}
 
@@ -75,6 +81,8 @@ public class WaterfallConsoleFilter extends Plugin {
 			this.noPermissionMessage = new TextComponent(noPermissionText);
 			this.configReloadedMessage = new TextComponent(configReloadedText);
 
+			this.keepLogs = getConfig().getInt("config.keep-logs", 7) * 24 * 60 * 60 * 1000;
+
 			this.filter = getConfig().getStringList("config.filter");
 
 		} catch (IOException e) {
@@ -88,6 +96,36 @@ public class WaterfallConsoleFilter extends Plugin {
 
 	private void registerCommands() {
 		getProxy().getPluginManager().registerCommand(this, new WaterfallReloadConsoleFilterCommand(this));
+	}
+
+	private void cleanupLogs() {
+
+		File logDir = new File("logs");
+
+		int deletedFiles = 0;
+
+		if (logDir.exists()) {
+
+			for (File file : logDir.listFiles()) {
+
+				long diff = new Date().getTime() - file.lastModified();
+
+				if (diff > keepLogs) {
+					file.delete();
+					deletedFiles++;
+				}
+
+			}
+
+			if (deletedFiles > 0) {
+				getLogger().info("Log cleanup completed. Deleted " + deletedFiles + " logs old than the configured amount of days.");
+				return;
+			}
+
+		}
+
+		getLogger().info("No logs have been purged...");
+
 	}
 
 	@Override

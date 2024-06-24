@@ -1,23 +1,35 @@
 # ConsoleFilter
+
 A lightweight plugin to filter and hide console messages and remove old log files.
 
 # Java Version
-Java 17 is used within this plugin and is strongly recommended.
 
-# Minecraft Support
-Currently this plugin only supports Spigot / Paper and Waterfall (BungeeCord Fork from PaperMC) for Minecraft Java Edition.
+Java 17 is required.
+
+# Requirements
+
+- Java 17
+- Paper or Waterfall
+
+# Compatibility
+
+Spigot, BungeeCord and forks of Paper / Waterfall may work, but aren't tested or supported.
+I have no interest in providing support for ancient Minecraft versions so don't bother asking.
 
 # Commands
+
 Spigot / Paper:
 /reloadconsolefilter - Reload the configuration
 
-Waterfall:
+BungeeCord / Waterfall:
 /breloadconsolefilter - Reload the configuration
 
 # Permissions
-- consolefilter.reload - Allow the usage of the config reload commands
+
+- consolefilter.reload - Allow the usage of the config reload command (both platforms)
 
 # Why are things the way they are?
-Evenso there are plugins on spigot that do similar already, they don't work the way I want them to. This is a all in solution for both Proxy and Backend.
-I have no interest in providing ancient 1.8 support.
-BungeeCord does not use org.apache.logging.log4j framework and I do.
+
+There are plugins that work in a similar way, but they don't work the way I want them to.
+It's mainly for my personal use, so I won't be working on any feature requests.
+This is an all-in-one-solution for both Waterfall and Paper.

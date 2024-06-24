@@ -2,11 +2,11 @@ name: ${project.name}
 version: ${project.version}
 description: ${project.description}
 author: Whitescan
-api-version: 1.18
+api-version: 1.20
 load: STARTUP
-main: me.whitescan.consolefilter.waterfall.WaterfallConsoleFilter
+main: dev.whitescan.consolefilter.waterfall.WaterfallConsoleFilter
 
 commands:
-    breloadconsolefilter:
-      description: Reload the console filter
-      permission: consolefilter.reload
+  breloadconsolefilter:
+    description: Reload the console filter
+    permission: consolefilter.reload

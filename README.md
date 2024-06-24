@@ -2,10 +2,6 @@
 
 A lightweight plugin to filter and hide console messages and remove old log files.
 
-# Java Version
-
-Java 17 is required.
-
 # Requirements
 
 - Java 17

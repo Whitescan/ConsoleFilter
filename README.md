@@ -20,6 +20,9 @@ Spigot / Paper:
 BungeeCord / Waterfall:
 /breloadconsolefilter - Reload the configuration
 
+Velocity:
+/vreloadconsolefilter - Reload the configuration
+
 # Permissions
 
 - consolefilter.reload - Allow the usage of the config reload command (both platforms)
